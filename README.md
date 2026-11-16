@@ -177,6 +177,6 @@ Author:
 
 Rivers Pankratov
 
-GitHub: atomsplits
+GitHub: twinkqueer
 42 Login: mpankrat
 

@@ -23,11 +23,20 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*a++ != *b++)
 		{
-			if (a[-1] < b[-1])
-				return (-1);
-			else
-				return (1);
+			return (((int)a[-1]) - ((int)b[-1]));
 		}
 	}
 	return (0);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char *argv[])
+{
+	char s[] = "abcj";
+	char s2[] = "abce";
+	printf("%d", ft_memcmp(s, s2, 4));
+	printf("%d", memcmp(s, s2, 4));
+}
+*/

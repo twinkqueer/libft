@@ -18,6 +18,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*content;
 
+	if (!f || !del)
+		return (NULL);
 	head = NULL;
 	while (lst)
 	{
@@ -36,3 +38,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (head);
 }
+/*
+int main(int argc, char *argv[])
+{
+	t_list list = {"big black", NULL};
+	ft_lstmap(&list, NULL, free);
+}
+*/

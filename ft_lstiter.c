@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == NULL)
+	if (!lst || !f)
 		return ;
 	while (lst != NULL)
 	{
@@ -22,3 +22,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+/*
+int main(int argc, char *argv[])
+{
+	t_list list = {"yo momma", NULL};
+	ft_lstiter(&list, NULL);
+}
+*/

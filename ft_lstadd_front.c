@@ -19,3 +19,14 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+/*
+int main(int argc, char *argv[])
+{
+	t_list *new = malloc(sizeof(t_list) * 1);
+	new->content = "BLE";
+	new->next = NULL;
+	t_list *list = NULL;
+	t_list **pointer = &list;
+	ft_lstadd_front(pointer, new);
+}
+*/

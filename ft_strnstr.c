@@ -12,36 +12,36 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
 	size_t	i;
 	size_t	j;
 
-	if (s2[0] == '\0')
-		return ((char *)s1);
+	if (little[0] == '\0')
+		return ((char *)big);
 	j = 0;
-	while (j < n && s1[j])
+	while (j < n && big[j])
 	{
 		i = 0;
-		while (j < n && s2[i] && s1[i] && s2[i] == s1[j])
+		while (j < n && little[i] && big[i] && little[i] == big[j])
 		{
 			i++;
 			j++;
 		}
-		if (s2[i] == '\0')
-			return ((char *)&s1[j - i]);
+		if (little[i] == '\0')
+			return ((char *)&big[j - i]);
 		j = j - i + 1;
 	}
 	return (0);
 }
 /*
 int main() {
-    char    *s1 = "ASDASD123";
-    char    *s2 = "ASDJ";
-    size_t  max = strlen(s2);
+    char    *big = "ASDASD123";
+    char    *little = "ASDJ";
+    size_t  max = strlen(little);
 
-    char    *i1 = strnstr(s1, s2, max);
-    char    *i2 = ft_strnstr(s1, s2, max);
+    char    *i1 = strnstr(big, little, max);
+    char    *i2 = ft_strnstr(big, little, max);
 
 
     printf("strnstr: %s\nft_strnstr: %s\n", i1,i2);
